@@ -1,14 +1,18 @@
 //Include our assertion library.
-expect = require('chai').expect;
-
-var Calculator = require('../lib/calculator')
+chai = require('chai');
+expect = chai.expect;
+sinon = require('sinon')
+chai.use(require('sinon-chai')); //chai module plugin.
+proxyquire = require('proxyquire');
 
 //Describe, before, beforeEach, it, after, and afterEach are all globally available with Mocha.
 describe('calculator', function() {
 
-  var calculator;
+  var calculator, mockSquareModule;
 
   beforeEach(function() {
+    mockSquareModule = sinon.stub().returns(100);
+    var Calculator = proxyquire('../lib/calculator', {'./square' : mockSquareModule});
     calculator = new Calculator();
   });
 
@@ -55,5 +59,36 @@ describe('calculator', function() {
     var quotient = calculator.divide(7);
     expect(quotient).to.equal(2);
   });
+
+  describe('when square is called with a parameter', function() {
+
+    it('calls square with the parameter', function() {
+      var square = calculator.square(7);
+      expect(mockSquareModule.calledWith(7)).to.equal(true);
+    });
+
+    it('returns the value from the square module', function() {
+      var square = calculator.square(7);
+      expect(square).to.equal(100);
+    });
+
+  });
+
+  describe('when square is called without a parameter', function() {
+
+    it('calls square with the last calculated value', function() {
+      calculator.add(4, 3);
+      var square = calculator.square();
+      expect(mockSquareModule.calledWith(7)).to.equal(true);
+    });
+
+    it('returns the value from the square module', function() {
+      calculator.add(4, 3);
+      var square = calculator.square();
+      expect(square).to.equal(100);
+    });
+
+  });
+
 
 });
