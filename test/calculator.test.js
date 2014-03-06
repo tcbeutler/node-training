@@ -11,8 +11,8 @@ describe('calculator', function() {
   var calculator, mockSquareModule;
 
   beforeEach(function() {
-    mockSquareModule = sinon.stub().returns(100);
-    var Calculator = proxyquire('../lib/calculator', {'./square' : mockSquareModule});
+    mockSquareModule = null; //use sinon here to create a stub that returns a static value
+    var Calculator = require('../lib/calculator');
     calculator = new Calculator();
   });
 
