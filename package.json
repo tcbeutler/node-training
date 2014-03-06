@@ -5,7 +5,8 @@
   "author": "Thomas Beutler",
   "dependencies": {},
   "devDependencies": {
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "mocha": "~1.17.1"
   },
   "main": "app.js",
   "repository": {
@@ -17,7 +18,7 @@
   },
   "scripts": {
     "start": "node app",
-    "test": "node node_modules/mocha/bin/_mocha",
+    "test": "node node_modules/mocha/bin/_mocha --recursive --reporter spec",
     "watch": "node node_modules/mocha/bin/_mocha --watch",
     "cover": "node node_modules/istanbul/lib/cli.js node_modules/mocha/bin/_mocha",
     "jshint": "node node_modules/jshint/bin/jshint -c config/.jshintrc app test app.js"
