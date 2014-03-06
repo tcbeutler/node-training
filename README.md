@@ -52,7 +52,7 @@ For step 2:
 
 ###Step 3 - Hosting in express.
 Run `git checkout step-3 -f`
-Run `npm install` to grab express.
+Run `npm install express --save` to grab express. This adds it to your package.json file as well as installs it.
 
 [**express**](http://expressjs.com/) - Web application framework. Built on top of connect.  
 [**supertest**](https://github.com/visionmedia/supertest) - Allows integration testing of http servers including express apps.
