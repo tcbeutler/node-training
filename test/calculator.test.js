@@ -45,6 +45,15 @@ describe('calculator', function() {
     expect(product).to.equal(60);
   });
 
-  //Add unit tests for divide here. Then make them pass!
+  it('can divide', function() {
+    var quotient = calculator.divide(70, 5);
+    expect(quotient).to.equal(14);
+  });
+
+  it('can divide consecutive numbers', function() {
+    var quotient = calculator.divide(70, 5);
+    var quotient = calculator.divide(7);
+    expect(quotient).to.equal(2);
+  });
 
 });
