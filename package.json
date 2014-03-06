@@ -3,9 +3,9 @@
   "description": "Simple 101 tutorial",
   "version": "0.0.1",
   "author": "Thomas Beutler",
-  "dependencies": {  
-  },
+  "dependencies": {},
   "devDependencies": {
+    "chai": "~1.9.0"
   },
   "main": "app.js",
   "repository": {
@@ -20,6 +20,6 @@
     "test": "node node_modules/mocha/bin/_mocha",
     "watch": "node node_modules/mocha/bin/_mocha --watch",
     "cover": "node node_modules/istanbul/lib/cli.js node_modules/mocha/bin/_mocha",
-    "jshint": "node node_modules/jshint/bin/jshint -c config/.jshintrc app test app.js",
+    "jshint": "node node_modules/jshint/bin/jshint -c config/.jshintrc app test app.js"
   }
 }
