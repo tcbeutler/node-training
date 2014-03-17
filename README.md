@@ -62,10 +62,15 @@ Open the newly created app.test.js. Notice the unit test functions now contain a
 This parameter is a callback function to tell mocha the unit test is complete. Use this any time you're unit testing
 asynchronous code.
 
+###Step 4 - Swagger.
+Run `git checkout step-4 -f`
+Run `npm start`
+Navigate to localhost:1337/docs and check out swagger's ability to make API calls!
+
 
 ####Steps
 1. Open app.js. We now have express and our calculator.
-2. Create a new express app.o
+2. Create a new express app.
 3. Create a route in express to `/calc` that allows operations to be performed.
     - It should take a query string with the following parameters:
         1. op - add, multiple, divide, etc
@@ -79,9 +84,8 @@ asynchronous code.
 To see the solution to any step 'n', do `git checkout step-n-solved -f`
 
 ###To-do
-1. Swagger
-2. Express body parser, middleware, etc
-3. nock
-4. promises A+ / q
-5. Jshint
-6. Istanbul code coverage 
+1. Express body parser, middleware, etc
+2. nock
+3. promises A+ / q
+4. Jshint
+5. Istanbul code coverage 
