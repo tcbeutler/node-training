@@ -28,7 +28,7 @@ Our next goal is to move into some TDD/BDD with the tools we're using for this p
 2. Open calculator.js and try to make the unit tests pass!
 3. Write unit tests for calculator.divide(), then make them pass.
 
-[**mocha**](http://visionmedia.github.io/mocha/) - Our unit test runner.  
+[**mocha**](http://mochajs.org/) - Our unit test runner.  
 [**chai**](http://chaijs.com/) - Our assertion library.  
 Chai provides 3 diffeent assertion formats:
 * Assert
